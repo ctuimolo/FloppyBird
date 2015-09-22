@@ -21,7 +21,7 @@ classes.
 
 the sprites are home made.
 
-NONE BUG:
+KNOWN BUG:
 Upon loading the main level screen after a game over screen, roughly 1/6 times 
 the PipeSpawner which controlls the pipe and floor speed might not be getting
 properly referenced or called. This will result in a blank screen with just
