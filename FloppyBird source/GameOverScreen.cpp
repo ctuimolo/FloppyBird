@@ -19,7 +19,7 @@ GameOverScreen::GameOverScreen(sf::RenderWindow* window, RoomManager* manager, i
 	scoreText.setCharacterSize(120);
 
 	miscText.setFont(mechaFont);
-	miscText.setString("your best score is...\n\n\n\n\n\n\n\n\n<esc> return to title\n<space> try again");
+	miscText.setString("your best score is...\n\n\n\n\n\n\n\n\n<esc> try again");
 	miscText.setPosition(40, 140);
 	miscText.setCharacterSize(20);
 }
@@ -31,11 +31,6 @@ void GameOverScreen::update() {
 	renderWindow->draw(scoreText);
 	renderWindow->draw(miscText);
 
-
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-		MainLevel* newLevel = new MainLevel(renderWindow,roomManager);
-		roomManager->changeRoom(newLevel);
-	}
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
 		roomManager->changeRoom(new TitleScreen(renderWindow, roomManager));
 	}

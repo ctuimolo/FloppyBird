@@ -1,44 +1,11 @@
-﻿Build started 9/21/2015 7:00:05 PM.
+﻿Build started 9/21/2015 7:15:10 PM.
      1>Project "F:\Documents\CMPM170\FloppyBird\FloppyBird source\FloppyBird.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Release\FloppyBird.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         f:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"SFML-2.3.1/include/" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Release\FloppyBird.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
-         stdafx.cpp
-         f:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"SFML-2.3.1/include/" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\FloppyBird.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt GameObject.cpp GameOverScreen.cpp main.cpp MainLevel.cpp MovingFloor.cpp Pipe.cpp PipePattern.cpp PipeSpawner.cpp Player.cpp RoomManager.cpp StarSpawner.cpp TitleScreen.cpp
-         GameObject.cpp
+         All outputs are up-to-date.
+         f:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"SFML-2.3.1/include/" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\FloppyBird.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt GameOverScreen.cpp
          GameOverScreen.cpp
-         main.cpp
-         MainLevel.cpp
-         MovingFloor.cpp
-     1>MovingFloor.cpp(22): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>MovingFloor.cpp(22): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-         Pipe.cpp
-     1>Pipe.cpp(34): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Pipe.cpp(34): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Pipe.cpp(43): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Pipe.cpp(43): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-         PipePattern.cpp
-         PipeSpawner.cpp
-     1>PipeSpawner.cpp(46): warning C4018: '<' : signed/unsigned mismatch
-     1>PipeSpawner.cpp(59): warning C4018: '<' : signed/unsigned mismatch
-     1>PipeSpawner.cpp(69): warning C4018: '<' : signed/unsigned mismatch
-         Player.cpp
-     1>Player.cpp(25): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Player.cpp(25): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Player.cpp(31): warning C4305: '=' : truncation from 'double' to 'float'
-     1>Player.cpp(53): warning C4018: '>=' : signed/unsigned mismatch
-     1>Player.cpp(64): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Player.cpp(64): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Player.cpp(88): warning C4018: '>' : signed/unsigned mismatch
-     1>Player.cpp(97): warning C4018: '>' : signed/unsigned mismatch
-     1>Player.cpp(111): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-         RoomManager.cpp
-         StarSpawner.cpp
-     1>StarSpawner.cpp(16): warning C4018: '<' : signed/unsigned mismatch
-     1>StarSpawner.cpp(44): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>StarSpawner.cpp(44): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-         TitleScreen.cpp
        Link:
          f:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Documents\CMPM170\FloppyBird\FloppyBird source\Release\FloppyBird.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"SFML-2.3.1/lib/" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "sfml-system.lib" "sfml-main.lib" "sfml-graphics.lib" "sfml-audio.lib" "sfml-network.lib" "sfml-window.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\FloppyBird.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\Documents\CMPM170\FloppyBird\FloppyBird source\Release\FloppyBird.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Documents\CMPM170\FloppyBird\FloppyBird source\Release\FloppyBird.lib" /MACHINE:X86 Release\GameObject.obj
          Release\GameOverScreen.obj
@@ -65,4 +32,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.29
+Time Elapsed 00:00:01.21
