@@ -42,15 +42,20 @@ bool Player::isAlive() {
 }
 
 bool Player::pipeCollision(Pipe* somePipe) {
-	std::cout << somePipe->type;
-		if(xpos + collisionRadius > somePipe->xpos &&
+	if(xpos + collisionRadius > somePipe->xpos &&
 		   xpos - collisionRadius < somePipe->xpos + somePipe->depth &&
 		   ypos + collisionRadius > somePipe->ypos &&
 		   ypos - collisionRadius < somePipe->ypos + somePipe->height) {
 		   		state = 0;
 				flash();
 				return true;
-	}else return false;
+	}
+	if(ypos + collisionRadius >= renderWindow->getSize().y - 51 && state != 0) {
+		state = 0;
+		flash();
+		return true;
+	}
+	return false;
 }
 
 void Player::update() {

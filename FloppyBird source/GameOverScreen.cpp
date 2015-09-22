@@ -33,7 +33,8 @@ void GameOverScreen::update() {
 
 
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-		roomManager->changeRoom(new MainLevel(renderWindow, roomManager));
+		MainLevel* newLevel = new MainLevel(renderWindow,roomManager);
+		roomManager->changeRoom(newLevel);
 	}
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
 		roomManager->changeRoom(new TitleScreen(renderWindow, roomManager));

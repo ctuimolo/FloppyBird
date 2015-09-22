@@ -1,4 +1,4 @@
-﻿Build started 9/21/2015 6:41:30 PM.
+﻿Build started 9/21/2015 7:00:05 PM.
      1>Project "F:\Documents\CMPM170\FloppyBird\FloppyBird source\FloppyBird.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Release\FloppyBird.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -27,11 +27,12 @@
      1>Player.cpp(25): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>Player.cpp(25): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>Player.cpp(31): warning C4305: '=' : truncation from 'double' to 'float'
-     1>Player.cpp(59): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Player.cpp(59): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Player.cpp(83): warning C4018: '>' : signed/unsigned mismatch
-     1>Player.cpp(92): warning C4018: '>' : signed/unsigned mismatch
-     1>Player.cpp(106): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>Player.cpp(53): warning C4018: '>=' : signed/unsigned mismatch
+     1>Player.cpp(64): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Player.cpp(64): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Player.cpp(88): warning C4018: '>' : signed/unsigned mismatch
+     1>Player.cpp(97): warning C4018: '>' : signed/unsigned mismatch
+     1>Player.cpp(111): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
          RoomManager.cpp
          StarSpawner.cpp
      1>StarSpawner.cpp(16): warning C4018: '<' : signed/unsigned mismatch
@@ -64,4 +65,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.41
+Time Elapsed 00:00:04.29
