@@ -3,27 +3,31 @@
 #include <SFML/Graphics.hpp>
 
 #include "RoomManager.h"
-#include "MainLevel.h"
 #include "Player.h"
-#include "Pipe.h"
+#include "PipeSpawner.h"
+#include "StarSpawner.h"
 
 class MainLevel: public Room{
 private:
 	sf::RenderWindow* renderWindow;
 	RoomManager* roomManager;
+	PipeSpawner* pipeSpawner;
+	StarSpawner* starSpawner;
+
+	Player* bird;
+	int currentPipeIndex;
+	int pipeSpeed;
+	int levelRelays;
 
 	std::vector<GameObject*> activeObjects;
-	Player* bird;
-	Pipe* upPipe;
-	Pipe* upPipe2;
 	
 	sf::Font mechaFont;
-	sf::Text title;
+	sf::Text miscText;
 
 public:
 	MainLevel(sf::RenderWindow* window, RoomManager* manager);
-	virtual void update();
+	void update();
+	void clearRoom();
 };
-
 
 #endif

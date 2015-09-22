@@ -3,6 +3,7 @@
 #include "RoomManager.h"
 #include "Room.h"
 
+#include <vector>
 #include <iostream>
 
 RoomManager::RoomManager() {

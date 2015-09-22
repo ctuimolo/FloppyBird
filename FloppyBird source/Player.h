@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "GameObject.h"
+#include "Pipe.h"
 
 class Player: public GameObject{
 private:
@@ -13,9 +14,12 @@ private:
 	sf::Time playerTime;
 	bool state;
 	sf::RenderWindow* renderWindow;
+	int spriteIndex;
+	int frameDelay;
 	
 	int initialXpos;
 	int initialYpos;
+	int lowerBound;
 
 	int collisionRadius;
 
@@ -31,8 +35,11 @@ private:
 public:
 	Player(sf::RenderWindow* window);
 	bool isAlive();
+	bool toGameOver();
+	bool pipeCollision(Pipe* somePipe);
 	void update();
 	void fly();
+	void flash();
 };
 
 #endif

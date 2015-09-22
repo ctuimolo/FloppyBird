@@ -10,13 +10,26 @@ private:
 	sf::Sprite* sprite;
 	sf::Texture* texture;
 	sf::RenderWindow* renderWindow;
-	int xspeed;
-	int yspeed;
-	std::string type;
+	sf::Clock activeClock;
 
 public:
-	Pipe(sf::RenderWindow* window, std::string type, int y, int initXspeed, int initYspeed);
+	std::string type;
+
+	bool scored;
+	int height;
+	int depth;
+	int OGxpos;
+	int OGypos;
+	int OGxspeed;
+	int OGyspeed;
+	int OGtimer;
+	int passingTimes;
+	int xspeed;
+	int yspeed;
+	Pipe(sf::RenderWindow* window, std::string type, int x, int y, int initXspeed, int initYspeed);
 	void update();
+	bool isActive;
+	void reset(int newXspeed, int newYspeed);
 };
 
 #endif

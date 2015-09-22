@@ -2,59 +2,64 @@
 #include <vector>
 #include <iostream>
 
-#include "RoomManager.h"
-#include "stdafx.h"
 #include "MainLevel.h"
+#include "RoomManager.h"
+#include "TitleScreen.h"
+#include "GameOverScreen.h"
 #include "Player.h"
-#include "Pipe.h"
+#include "PipePattern.h"
+#include "PipeSpawner.h"
+#include "StarSpawner.h"
+#include <vector>
 
 MainLevel::MainLevel(sf::RenderWindow* window, RoomManager* manager) {
-	std::cout << "MAIN LEVEL CREATED\n";
-
 	renderWindow = window;
 	roomManager = manager;
+	pipeSpeed = 3;
+	levelRelays = 0;
 
 	//==== GAME OBJECTS VECTOR ====//
 	/* GameObject type objects placed into this vector
 	 * are placed through the update loop.
 	 * game objects must have defined "update" funtions
 	 */
-	std::vector<GameObject*> activeObjects;
-
-	Player* bird = new Player(renderWindow);
-	//Pipe* upPipe = new Pipe(*renderWindow, "down", 280, 3, 0);
-	//Pipe* upPipe2 = new Pipe(*renderWindow, "up", 400, 3, 0);
-	
+	bird = new Player(renderWindow);
+	pipeSpawner = new PipeSpawner(renderWindow, &activeObjects, bird);
+	starSpawner = new StarSpawner(renderWindow);
+	activeObjects.push_back(starSpawner);
+	activeObjects.push_back(pipeSpawner);
 	activeObjects.push_back(bird);
-	//activeObjects.push_back(upPipe);
-	//activeObjects.push_back(upPipe2);
-	
-	std::cout << activeObjects.size() << std::endl;
 
-	sf::Font mechaFont;
+	mechaFont.loadFromFile("resources/Mecha_Bold.ttf");
 
-	sf::Text title;
-	title.setFont(mechaFont);
-	title.setCharacterSize(20);
-	title.setPosition(30, 50);
-	title.setColor(sf::Color::White);
-	title.setString("flOppy bird");
-
-	renderWindow->draw(title);
+	miscText.setFont(mechaFont);
+	miscText.setCharacterSize(20);
+	miscText.setPosition(2, 2);
+	miscText.setColor(sf::Color::White);
+	miscText.setString("<esc> return to title");
 
 }
 
 void MainLevel::update() {
 	// refresh screen for redrawing
 	renderWindow->clear();
+	renderWindow->draw(miscText);
 
-	renderWindow->draw(title);
+	// On key(esc) press, clear room and change to title screen
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+		this->clearRoom();
+		roomManager->changeRoom(new TitleScreen(renderWindow, roomManager));
+	}
+
+	// On player death trigger, move to Game Over Screen
+	if(bird->toGameOver()) {
+		roomManager->changeRoom(new GameOverScreen(renderWindow, roomManager, pipeSpawner->returnScore()));
+	}
 
 	// Active objects update loop
 	int index = 0;
 	for(std::vector<GameObject*>::iterator current = activeObjects.begin();
 			current != activeObjects.end();) {
-		std::cout << "Iterating over Active Objects\n";
 		GameObject* currentObject = activeObjects.at(index);
 		if(currentObject->xpos < -200) {
 			current = activeObjects.erase(current);
@@ -67,4 +72,13 @@ void MainLevel::update() {
 
 	// display screen update
 	renderWindow->display();
+}
+
+void MainLevel::clearRoom() {
+	// iterate over active objects and delete
+	for(std::vector<GameObject*>::iterator current = activeObjects.begin();
+			current != activeObjects.end();) {
+		GameObject* currentObject = activeObjects.at(0);
+		current = activeObjects.erase(current);
+		}
 }
